@@ -1,10 +1,21 @@
 server:
   port: 8088
 
+# spring:
+#   profiles:
+#     active: native
+#   cloud:
+#     config:
+#       server:
+#         bootstrap: true
+
 spring:
   profiles:
-    active: native
+    active: git
   cloud:
     config:
       server:
-        bootstrap: true
+        git:
+          uri: https://github.com/nileshzarkar/config.git
+          clone-on-start: true
+          default-label: main
